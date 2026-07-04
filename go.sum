@@ -1,0 +1,6 @@
+github.com/JesseCoretta/go-ldapfilter v0.0.0-20260704013419-52f554f120f9 h1:lyA3+8soMY6ETdrZUwrW1SQIB+khva/qdzdv4ryN2PI=
+github.com/JesseCoretta/go-ldapfilter v0.0.0-20260704013419-52f554f120f9/go.mod h1:zYXqpXYSpuypzTPPk48MVnuom+kUa6YnYfWG1A74Gz4=
+github.com/JesseCoretta/go-ldapsubstr v0.0.0-20260704000627-d24db52d2a15 h1:7aepk6SVeIAgnIOjzkpl5u14TV1cmFRolonhrB5Ay2s=
+github.com/JesseCoretta/go-ldapsubstr v0.0.0-20260704000627-d24db52d2a15/go.mod h1:8X8jmaq8M/lu+AV16pWkGqxvAXeWng6y6H4tfZOVBk4=
+github.com/JesseCoretta/go-shifty v1.0.1 h1:+AaQbNfVtWxWwI9jo0Hke6Jv1mBlOD/bAooaj0xjVi8=
+github.com/JesseCoretta/go-shifty v1.0.1/go.mod h1:vnqi9wCMnLDDD4XU3NmL2fF7dz4HiaAuI/M3bqB2bQE=
