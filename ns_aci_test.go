@@ -2931,7 +2931,7 @@ func ExamplePermission_granting() {
 /*
 This example demonstrates the withholding (denial) of all privileges except proxy.
 */
-func ExamplePermission_witholding() {
+func ExamplePermission_withholding() {
 
 	// deny everything (this does not include proxy privilege)
 	p, err := NewPermission(false, AllAccess)
