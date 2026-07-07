@@ -737,7 +737,13 @@ func ExampleOperator_Description() {
 	// Greater Than Or Equal
 }
 
+func ExampleInstruction_OID_netScapeOID() {
+	var i Instruction
+	fmt.Printf("Netscape 'aci' attribute OID: %s\n", i.OID())
+}
+
 func TestNetscape_codecov(t *testing.T) {
+
 	bi, err := NewBindRuleItem(`userdn!="ldap:///anyone"`)
 	if err != nil {
 		t.Errorf("%s failed: %v", t.Name(), err)
@@ -1299,6 +1305,42 @@ func TestNetscape_codecov(t *testing.T) {
 	bdn.Ne()
 	bdn.Push("nothing")
 	bdn.Index(0)
+
+	var adn aCIDistinguishedName
+	adn.contains(struct{}{})
+
+	_, _ = parseATBTV("#")
+	_ = isAttributeDescriptor(`abc-`)
+	_ = isAttributeDescriptor(`-abc`)
+	_ = isAttributeDescriptor(`a--bc`)
+	_ = isAttributeDescriptor(`ab?c`)
+
+	var aoid aCIObjectIdentifier
+	aoid.contains(struct{}{})
+
+	_ = strInSlice([]string{`this`}, []string{`that`})
+	_ = strInSlice([]string{`this`}, []string{`that`}, true)
+	_ = streq(`a`, `A`)
+
+	num := 3
+	_ = bitSize(nil)
+	_ = bitSize(&num)
+
+	_ = isObjectIdentifier(`blarg`)
+	_ = isObjectIdentifier(`3.1.1`)
+	_ = isObjectIdentifier(`1.023`)
+	_ = isObjectIdentifier(`1.f.2`)
+	_ = isObjectIdentifier(`1...2`)
+	_ = isObjectIdentifier(`1.-2`)
+	_ = isObjectIdentifier(`-1.3.6`)
+	_ = isObjectIdentifier(`1.3.-6`)
+	_ = isObjectIdentifier(`1.3.6.-6`)
+	_ = isObjectIdentifier(`1.3.6.06`)
+	_ = isObjectIdentifier(`1.3.6.A`)
+
+	_ = isValidArc(`-3`)
+	_ = isValidArc(`06`)
+	_ = isValidArc(`6Y8`)
 
 	bdn.aCIDistinguishedName.string(true, false)
 	bdn.aCIDistinguishedName.string(false, true)
