@@ -8294,7 +8294,7 @@ func init() {
 		6: GSSAPI,
 	}
 
-	// authNames facilities lookups of AuthenticationMethod
+	// authNames facilitates lookups of AuthenticationMethod
 	// instances using their string representation. as the
 	// lookup key.
 	//
