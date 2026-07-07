@@ -21,6 +21,24 @@ func ExampleScope() {
 	// Output: onelevel
 }
 
+func ExampleNewInstruction() {
+	raw := `( targetfilter = "(&(objectClass=employee)(objectClass=engineering))" )( targetcontrol = "1.2.3.4" || "1.2.3.5" )( targetscope = "onelevel" )(version 3.0; acl "Allow read and write for anyone using greater than or equal 128 SSF - extra nesting"; allow(read,write) ( ( ( userdn = "ldap:///anyone" ) AND ( ssf >= "71" ) ) AND NOT ( dayofweek = "Wed" OR dayofweek = "Fri" ) ); )`
+
+	i, err := NewInstruction(raw)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	perm := i.PB.Index(0).Permission()
+	rule := i.PB.Index(0).BindRule().Index(0).Index(0)
+	fmt.Printf("Permission: %s\n", perm)
+	fmt.Printf("BindRule: %s\n", rule)
+	// Output:
+	// Permission: allow(read,write)
+	// BindRule: (userdn="ldap:///anyone")
+}
+
 func TestNewInstruction(t *testing.T) {
 	tests := []struct {
 		Orig string
