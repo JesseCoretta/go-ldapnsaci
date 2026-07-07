@@ -5011,7 +5011,7 @@ func marshalACIv3ObjectIdentifier(kw TargetKeyword, x ...any) (r ObjectIdentifie
 }
 
 /*
-IsZero wraps the [stackage.Stack.IsZero] method.
+IsZero returns the integer length of the receiver instance.
 */
 func (r ObjectIdentifier) IsZero() bool {
 	return r.aCIObjectIdentifier == nil
@@ -5047,7 +5047,7 @@ func (r ObjectIdentifier) push(x ...any) (ObjectIdentifier, error) {
 }
 
 /*
-Len wraps the [stackage.Stack.Len] method.
+Len returns the integer length of the receiver instance.
 */
 func (r ObjectIdentifier) Len() int {
 	var i int
@@ -5863,7 +5863,7 @@ func NewTimeframeBindRule(notBefore, notAfter TimeOfDay) BindRule {
 }
 
 /*
-Keyword wraps the [stackage.Condition.Keyword] method and resolves the raw value into a [BindKeyword]. Failure to do so will return a bogus [Keyword].
+Keyword returns the [BindToD] keyword instance.
 */
 func (r TimeOfDay) Keyword() Keyword {
 	return BindToD
@@ -6593,7 +6593,7 @@ func (r AttributeFilterOperation) Len() int {
 }
 
 /*
-IsZero wraps the [stackage.Stack.IsZero] method.
+IsZero returns a Boolean value indicative of a nil receiver state.
 */
 func (r AttributeFilterOperation) IsZero() bool {
 	var z bool = true
@@ -6606,7 +6606,7 @@ func (r AttributeFilterOperation) IsZero() bool {
 }
 
 /*
-Valid wraps the [stackage.Stack.Valid] method.
+Valid returns an error following a validity check.
 */
 func (r AttributeFilterOperation) Valid() error {
 	var err error
