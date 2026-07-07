@@ -7,12 +7,23 @@ Please note that each implementation of Netscape's ACIv3 syntax has subtle varia
 ## Features
 
  - ***Thoroughly*** documented with a crazy number of examples
- - Extreme test coverage
+ - 100% test coverage
  - Vendor agnostic design (_all_ possible ACIv3 features are implemented)
  - BindRule parenthetical preservation (will observe use, or avoidance, of parenthetical statements)
  - Padding preservation (e.g.: `( userdn = "ldap:///anyone" )` vs. `(userdn="ldap:///anyone")`)
  - Panic-proof indexing for multi-valued statement (e.g.: bind rules)
  - Supports creation of ACIv3 statements by text parsing or manual type instance assembly
+
+## Use Cases
+
+This library is rather niche. Most, if not all, directory product implementations of this popular access control syntax have their own codebase. 
+
+So what is this package meant for? Primarily, it is meant to be the basis for a supplemental tool to assist directory and cybersecurity personnel in doing any of the following:
+
+  - ACIv3 _statement_ creation and modification
+  - Generate accurate and easy-to-read ACIv3 audit reports
+
+This package deals solely in text. It does not connect to your directory server, ever. It is purely offline.
 
 ## Parse Example
 
