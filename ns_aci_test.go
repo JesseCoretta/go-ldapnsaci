@@ -740,6 +740,7 @@ func ExampleOperator_Description() {
 func ExampleInstruction_OID_netScapeOID() {
 	var i Instruction
 	fmt.Printf("Netscape 'aci' attribute OID: %s\n", i.OID())
+	// Output: Netscape 'aci' attribute OID: 2.16.840.1.113730.3.1.55
 }
 
 func TestNetscape_codecov(t *testing.T) {
